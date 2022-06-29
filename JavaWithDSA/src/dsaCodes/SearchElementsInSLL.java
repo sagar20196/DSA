@@ -34,6 +34,7 @@ public class SearchElementsInSLL {
 		System.out.println("null");
 	}
 	
+	//Searching a particular node in linked list
 	public boolean searchElement(int searchKey)
 	{
 		 ListNode current = head;
@@ -48,6 +49,22 @@ public class SearchElementsInSLL {
 		return false;
 	}
 	
+	//Find middle node in a linked list
+	public ListNode getMiddleNode()
+	{
+		if(head==null)
+		{
+			return null;
+		}
+		ListNode slowPtr = head;
+		ListNode fastPtr = head;
+		while(fastPtr!=null && fastPtr.next!=null)
+		{
+			slowPtr = slowPtr.next;
+			fastPtr = fastPtr.next.next;
+		}
+		return slowPtr;
+	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -59,6 +76,8 @@ public class SearchElementsInSLL {
 		System.out.println("Singly Linked List:");
 		se.displayList();
 		System.out.println("Is the search key found? : "+se.searchElement(5));
+		ListNode middleNode = se.getMiddleNode();
+		System.out.println("Middle node is :"+middleNode.data);
 
 	}
 
