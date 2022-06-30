@@ -1,20 +1,6 @@
 package dsaCodes;
 
-public class SinglyLinkedListImplementation {
-	
-	private ListNode head;
-	
-	private static class ListNode
-	{
-		private int data; //can be a generic type 
-		private ListNode next; //Reference to next ListNode in list
-		
-		public ListNode(int data)
-		{
-			this.data=data;
-			this.next=null;
-		}
-	}
+public class SinglyLinkedListImplementation extends ListNodeClass{
 	
 	//Displaying a linked list
 	public void display()
@@ -153,14 +139,6 @@ public class SinglyLinkedListImplementation {
 		// TODO Auto-generated method stub
 		SinglyLinkedListImplementation sll = new SinglyLinkedListImplementation();
 		sll.head= new ListNode(10);
-		ListNode second = new ListNode(1);
-		ListNode third = new ListNode(8);
-		ListNode fourth = new ListNode(11);
-		
-		//Now we will connect the nodes together to form a chain
-		sll.head.next = second; // 10-->1
-		second.next = third; // 10-->1-->8
-		third.next = fourth; // 10-->1-->8-->11-->null
 		System.out.println("Given Linked list :");
 		sll.display();
 		System.out.println("Length of a linked list : "+sll.findLength());

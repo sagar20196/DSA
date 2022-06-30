@@ -1,28 +1,6 @@
 package dsaCodes;
 
-public class ReverseElementInSLL {
-
-	private ListNode head;
-	
-	private static class ListNode
-	{
-		private int data;
-		private ListNode next;
-		
-		public ListNode(int data)
-		{
-			this.data = data;
-			this.next = next;
-		}
-	}
-	
-	public void insert(int value)
-	{
-		ListNode newNode = new ListNode(value);
-		newNode.next= head;
-		head = newNode;
-		
-	}
+public class ReverseElementInSLL extends ListNodeClass{
 	
 	public void displayList(ListNode head)
 	{
