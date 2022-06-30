@@ -2,18 +2,6 @@ package dsaCodes;
 
 public class SinglyLinkedListImplementation extends ListNodeClass{
 	
-	//Displaying a linked list
-	public void display()
-	{
-		ListNode current = head;
-		while(current!=null)
-		{
-			System.out.print(current.data+"-->");
-			current = current.next;
-		}
-		System.out.println("null");
-	}
-	
 	//Finding length of a linked list
 	public int findLength()
 	{

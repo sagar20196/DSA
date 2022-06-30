@@ -24,14 +24,15 @@ public class ListNodeClass {
 		
 	}
 	
-	public void displayList()
-	{
-		ListNode current = head;
-		while(current!=null)
+	//Displaying a linked list
+		public void display()
 		{
-			System.out.print(current.data+" --> ");
-			current = current.next;
+			ListNode current = head;
+			while(current!=null)
+			{
+				System.out.print(current.data+"-->");
+				current = current.next;
+			}
+			System.out.println("null");
 		}
-		System.out.println("null");
-	}
 }

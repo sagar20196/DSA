@@ -43,7 +43,7 @@ public class SearchElementsInSLL extends ListNodeClass {
 		se.insert(7);
 		se.insert(4);
 		System.out.println("Singly Linked List:");
-		se.displayList();
+		se.display();
 		System.out.println("Is the search key found? : "+se.searchElement(5));
 		ListNode middleNode = se.getMiddleNode();
 		System.out.println("Middle node is :"+middleNode.data);
