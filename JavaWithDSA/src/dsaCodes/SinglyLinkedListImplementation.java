@@ -127,6 +127,14 @@ public class SinglyLinkedListImplementation extends ListNodeClass{
 		// TODO Auto-generated method stub
 		SinglyLinkedListImplementation sll = new SinglyLinkedListImplementation();
 		sll.head= new ListNode(10);
+		ListNode second = new ListNode(3);
+		ListNode third = new ListNode(4);
+		ListNode fourth = new ListNode(8);
+		
+		sll.head.next=second;
+		second.next=third;
+		third.next=fourth;
+		
 		System.out.println("Given Linked list :");
 		sll.display();
 		System.out.println("Length of a linked list : "+sll.findLength());
