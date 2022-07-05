@@ -10,6 +10,7 @@ public class DetectLoopInSLL extends ListNodeClass{
 		while(fastPtr!=null && fastPtr.next!=null)
 		{
 			fastPtr = fastPtr.next.next;
+			
 			slowPtr = slowPtr.next;
 			if(fastPtr==slowPtr)
 			{
@@ -17,6 +18,34 @@ public class DetectLoopInSLL extends ListNodeClass{
 			}
 		}
 		return false;
+	}
+	
+	//Check starting point of a loop in Singly Linked List
+	public ListNode startNodeOfALoop()
+	{
+		ListNode fastPtr = head;
+		ListNode slowPtr = head;
+		while(fastPtr!=null && fastPtr.next!=null)
+		{
+			fastPtr = fastPtr.next.next;
+			slowPtr = slowPtr.next;
+			if(fastPtr==slowPtr)
+			{
+				return getStartingNode(slowPtr);
+			}
+		}
+		return null;
+	}
+	
+	private ListNode getStartingNode(ListNode slowPtr)
+	{
+		ListNode temp = head;
+		while(temp!=slowPtr)
+		{
+			temp=temp.next;
+			slowPtr = slowPtr.next;
+		}
+		return temp;//starting node of the loop
 	}
 	
 	//creating a loop in linked list
@@ -43,7 +72,8 @@ public class DetectLoopInSLL extends ListNodeClass{
 		DetectLoopInSLL dl = new DetectLoopInSLL();	
 		dl.createLoopInLinkedList();
 		System.out.println("Is loop present in linked list?: "+dl.containsLoop());
-		
+		System.out.println("Starting node of a loop where loop start:");
+		System.out.println(dl.startNodeOfALoop().data);	
 		
 	}
 
