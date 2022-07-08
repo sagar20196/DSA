@@ -2,37 +2,6 @@ package dsaCodes;
 
 public class SortAndRemoveDuplicatesFromSLL extends ListNodeClass {
 	
-	//Sort Singly Linked List
-	public void sortList()
-	{
-		ListNode current = head;
-		ListNode index = null;
-		int temp;
-		if(head==null)
-		{
-			return;
-		}
-		else
-		{
-			while(current!=null)
-			{
-				index = current.next;
-				while(index!=null)
-				{
-					if(current.data>index.data)
-					{
-						temp=current.data;
-						current.data = index.data;
-						index.data = temp;
-					}
-					index = index.next;
-				}
-				current = current.next;
-			}
-			
-		}
-	}
-	
 	//Insert a new node in sorted linked list that won't effect on sorting order
 	public ListNode insertInSortedList(int value)
 	{

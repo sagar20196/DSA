@@ -25,14 +25,45 @@ public class ListNodeClass {
 	}
 	
 	//Displaying a linked list
-		public void display()
+	public void display()
+	{
+		ListNode current = head;
+		while(current!=null)
+		{
+			System.out.print(current.data+"-->");
+			current = current.next;
+		}
+		System.out.println("null");
+	}
+	
+	//Sort Singly Linked List
+		public void sortList()
 		{
 			ListNode current = head;
-			while(current!=null)
+			ListNode index = null;
+			int temp;
+			if(head==null)
 			{
-				System.out.print(current.data+"-->");
-				current = current.next;
+				return;
 			}
-			System.out.println("null");
+			else
+			{
+				while(current!=null)
+				{
+					index = current.next;
+					while(index!=null)
+					{
+						if(current.data>index.data)
+						{
+							temp=current.data;
+							current.data = index.data;
+							index.data = temp;
+						}
+						index = index.next;
+					}
+					current = current.next;
+				}
+				
+			}
 		}
 }
