@@ -1,6 +1,6 @@
 package dsaCodes;
 
-public class MergeTwoSortedLinkedList extends ListNodeClass {
+public class MergeTwoSortedLinkedList extends ListNodeSLL {
 	
 	//Merge two sorted linked list
 	public static ListNode merge(ListNode a, ListNode b)
@@ -56,7 +56,6 @@ public class MergeTwoSortedLinkedList extends ListNodeClass {
 		MergeTwoSortedLinkedList result = new MergeTwoSortedLinkedList();
 		result.head = merge(m1.head,m2.head);
 		result.display();
-		
 		
 	}
 

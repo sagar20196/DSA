@@ -1,6 +1,6 @@
 package dsaCodes;
 
-public class SortAndRemoveDuplicatesFromSLL extends ListNodeClass {
+public class SortAndRemoveDuplicatesFromSLL extends ListNodeSLL {
 	
 	//Insert a new node in sorted linked list that won't effect on sorting order
 	public ListNode insertInSortedList(int value)

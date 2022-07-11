@@ -4,7 +4,7 @@
 
 package dsaCodes;
 
-public class AddTwoSinglyLinkedList extends ListNodeClass {
+public class AddTwoSinglyLinkedList extends ListNodeSLL {
 
 	public static ListNode addTwoList(ListNode a, ListNode b)
 	{

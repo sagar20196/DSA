@@ -1,6 +1,6 @@
 package dsaCodes;
 
-public class ReverseElementInSLL extends ListNodeClass{
+public class ReverseElementInSLL extends ListNodeSLL{
 	
 	public void displayList(ListNode head)
 	{

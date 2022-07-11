@@ -2,7 +2,7 @@ package dsaCodes;
 
 import java.util.Scanner;
 
-public class SearchElementsInSLL extends ListNodeClass {
+public class SearchElementsInSLL extends ListNodeSLL {
 	
 	
 	//Searching a particular node in linked list

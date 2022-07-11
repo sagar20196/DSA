@@ -1,6 +1,6 @@
 package dsaCodes;
 
-public class DetectLoopInSLL extends ListNodeClass{
+public class DetectLoopInSLL extends ListNodeSLL{
 
 	//Check whether the list contains loop or not
 	public boolean containsLoop()

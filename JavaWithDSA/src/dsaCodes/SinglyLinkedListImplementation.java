@@ -1,6 +1,6 @@
 package dsaCodes;
 
-public class SinglyLinkedListImplementation extends ListNodeClass{
+public class SinglyLinkedListImplementation extends ListNodeSLL{
 	
 	//Finding length of a linked list
 	public int findLength()
