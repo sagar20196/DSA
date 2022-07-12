@@ -1,7 +1,10 @@
 package dsaCodes;
 
+import java.util.NoSuchElementException;
+
 public class DoublyLinkedListImplementation extends ListNodeDLL {
 	
+	//Insert node at the beginning of a linked list
 	public void insertFirst(int value)
 	{
 		ListNode newNode = new ListNode(value);
@@ -18,6 +21,7 @@ public class DoublyLinkedListImplementation extends ListNodeDLL {
 		length++;
 	}
 	
+	//Insert node at the end of a linked list
 	public void insertLast(int value)
 	{
 		ListNode newNode = new ListNode(value);
@@ -33,6 +37,48 @@ public class DoublyLinkedListImplementation extends ListNodeDLL {
 		tail = newNode;
 		length++;
 	}
+	
+	//Delete first node of a linked list
+	public ListNode deleteFirst()
+	{
+		if(isEmpty())
+		{
+			throw new NoSuchElementException();
+		}
+		ListNode temp = head;
+		if(head==tail)
+		{
+			tail = null;
+		}
+		else
+		{
+			head.next.previous = null;
+		}
+		head = head.next;
+		temp.next = null;
+		return temp;
+	}
+	
+	//Delete last node of a linked list
+		public ListNode deleteLast()
+		{
+			if(isEmpty())
+			{
+				throw new NoSuchElementException();
+			}
+			ListNode temp = tail;
+			if(head==tail)
+			{
+				head = null;
+			}
+			else
+			{
+				tail.previous.next = null;
+			}
+			tail = tail.previous;
+			temp.previous = null;
+			return temp;
+		}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -42,8 +88,8 @@ public class DoublyLinkedListImplementation extends ListNodeDLL {
 		dll1.insertLast(5);
 		dll1.insertLast(8);
 		System.out.println("Insert node at the beginning of Doubly Linked List:");
-		dll1.displayForward();
-		dll1.displayBackward();
+		dll1.displayForward();	// 4 1 5 8
+		dll1.displayBackward(); // 8 5 1 4
 		DoublyLinkedListImplementation dll2 = new DoublyLinkedListImplementation();
 		dll2.insertFirst(4);
 		dll2.insertFirst(1);
@@ -52,7 +98,16 @@ public class DoublyLinkedListImplementation extends ListNodeDLL {
 		System.out.println("Insert node at the end of Doubly Linked List:");
 		dll2.displayBackward();
 		dll2.displayForward();
-
+		System.out.println("Delete first node of a linked list:");
+		dll1.deleteFirst();
+		dll2.deleteFirst();
+		dll1.displayForward();
+		dll2.displayForward();
+		System.out.println("Delete last node of a linked list:");
+		dll1.deleteLast();
+		dll2.deleteLast();
+		dll2.displayBackward();
+		dll1.displayBackward();
 	}
 
 }
