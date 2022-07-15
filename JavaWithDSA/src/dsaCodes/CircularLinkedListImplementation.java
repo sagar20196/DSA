@@ -1,6 +1,8 @@
 //It is similar to singly linked list. Only difference - last node connected to first node
 package dsaCodes;
 
+import java.util.NoSuchElementException;
+
 public class CircularLinkedListImplementation {
 	
 	private ListNode last;
@@ -80,6 +82,46 @@ public class CircularLinkedListImplementation {
 		length++;
 	}
 	
+	//insert a node at the end of a linked list
+	public void insertLast(int value)
+	{
+		ListNode newNode = new ListNode(value);
+		if(last==null)
+		{
+			last = newNode;
+			last.next = last;
+			return;	
+		}
+		else
+		{
+			newNode.next = last.next;
+			last.next = newNode;
+			last = newNode;
+		}
+		length++;
+	}
+	
+	//remove first node from circular linked list
+	public ListNode deleteFirst()
+	{
+		if(isEmpty())
+		{
+			throw new NoSuchElementException("Circular singly linked list is already empty.");
+		}
+		ListNode temp = last.next;
+		if(last.next==null)
+		{
+			last=null;
+		}
+		else
+		{
+			last.next = temp.next;
+		}
+		temp.next = null;
+		length--;
+		return temp;
+	}
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		CircularLinkedListImplementation cll = new CircularLinkedListImplementation();
@@ -89,6 +131,14 @@ public class CircularLinkedListImplementation {
 		System.out.println("Insert a node at the beginning of circular linked list:");
 		cll.insertFirst(2);
 		cll.insertFirst(6);
+		cll.display();
+		System.out.println("Insert a node at the end of circular linked list:");
+		cll.insertLast(4);
+		cll.insertLast(7);
+		cll.display();
+		System.out.println("Remove first node from a circular linked list:");
+		cll.deleteFirst();
+		cll.deleteFirst();
 		cll.display();
 
 	}
