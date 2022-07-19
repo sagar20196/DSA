@@ -7,8 +7,8 @@ public class MoveZeroesToEndOfArray extends ArrayImplementation {
 	//moving zeroes to end of an array
 	public void moveZeroes(int[] arr)
 	{
-		int j = 0;     //focuses on zeroth elements
-		for (int i = 0; i < arr.length; i++)   //focuses on non zero elements
+		int j = 0;     //j focuses on zeroth elements
+		for (int i = 0; i < arr.length; i++)   //i focuses on non zero elements
 		{   
 			if(arr[i]!=0 && arr[j]==0)
 			{
@@ -21,6 +21,16 @@ public class MoveZeroesToEndOfArray extends ArrayImplementation {
 				j++;
 			}
 		}
+	}
+	
+	//resize an array
+	public int[] resize(int []arr, int capacity)
+	{
+		int []temp = new int[capacity];
+		for (int i = 0; i < arr.length; i++) {
+			temp[i] = arr[i];
+		}
+		return temp;
 	}
 
 	public static void main(String[] args) {
@@ -37,6 +47,9 @@ public class MoveZeroesToEndOfArray extends ArrayImplementation {
 		System.out.println("Moved zeroes to end of the array:");
 		mz.moveZeroes(arr);
 		mz.printArray(arr);
+		System.out.println("Length of the original array is:\n"+arr.length);
+		int []a = mz.resize(arr, 10);
+		System.out.println("After resizing length of original array is:\n"+a.length);
 		sc.close();
 
 	}
