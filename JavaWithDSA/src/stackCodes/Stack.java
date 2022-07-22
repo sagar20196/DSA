@@ -18,22 +18,26 @@ public class Stack {
 		}
 	}
 	
+	//constructor
 	public Stack()
 	{
 		top = null;
 		length = 0;
 	}
 	
+	//find length of stack
 	public int length()
 	{
 		return length;
 	}
 	
+	//check whether stack is empty or not
 	public boolean isEmpty()
 	{
 		return length==0;
 	}
 	
+	//push element into stack
 	public void push(int data)
 	{
 		ListNode temp = new ListNode(data);
@@ -42,6 +46,7 @@ public class Stack {
 		length++;
 	}
 	
+	//remove element from stack
 	public int pop()
 	{
 		if(isEmpty())
@@ -54,6 +59,7 @@ public class Stack {
 		return result;
 	}
 	
+	//check the peek point of the stack 
 	public int peek()
 	{
 		if(isEmpty())
