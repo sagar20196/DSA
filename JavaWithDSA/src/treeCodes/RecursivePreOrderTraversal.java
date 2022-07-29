@@ -2,7 +2,7 @@ package treeCodes;
 
 public class RecursivePreOrderTraversal extends BinaryTree {
 
-	//PreOrder Traversal of a binary tree
+	//PreOrder Traversal of a binary tree using recursion
 	public void preOrder(TreeNode root)
 	{
 		if(root==null)
