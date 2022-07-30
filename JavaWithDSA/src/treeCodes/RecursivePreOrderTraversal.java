@@ -32,6 +32,7 @@ public class RecursivePreOrderTraversal extends BinaryTree {
 		// TODO Auto-generated method stub
 		RecursivePreOrderTraversal pt = new RecursivePreOrderTraversal();
 		pt.binaryTree();
+		System.out.println("Pre Order Traversal using Recursion:");
 		pt.preOrder(pt.root);
 
 	}
