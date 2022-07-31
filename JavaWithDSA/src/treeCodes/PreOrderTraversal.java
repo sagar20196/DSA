@@ -11,9 +11,9 @@ public class PreOrderTraversal extends BinaryTree{
 		{
 			return;
 		}
-			System.out.print(root.data+ " ");
-			recursivePreOrder(root.left);
-			recursivePreOrder(root.right);
+		System.out.print(root.data+ " ");
+		recursivePreOrder(root.left);
+		recursivePreOrder(root.right);
 	}
 	
 	//PreOrder Traversal of a binary tree using iteration 
