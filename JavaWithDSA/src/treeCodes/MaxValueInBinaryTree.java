@@ -2,7 +2,7 @@ package treeCodes;
 
 public class MaxValueInBinaryTree extends BinaryTree {
 	
-	//find max value in Binary Tree
+	//find max value in Binary Tree using recursion
 	public int findMax(TreeNode root)
 	{
 		if(root==null)
