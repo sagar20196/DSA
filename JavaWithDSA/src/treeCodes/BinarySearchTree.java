@@ -60,6 +60,28 @@ public class BinarySearchTree{
 		inOrder(root.right);
 	}
 	
+	//calling search method
+	public TreeNode search(int key)
+	{
+		return search(root, key);
+	}
+	
+	//search given key in binary search tree using recursion
+	public TreeNode search(TreeNode root, int key)
+	{
+		if(root==null || root.data == key)
+		{
+			return root;
+		}
+		if(key<root.data)
+		{
+			return search(root.left,key);		
+		}
+		else
+		{
+			return search(root.right,key);
+		}
+	}
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -70,6 +92,11 @@ public class BinarySearchTree{
 		bst.insert(7);
 		System.out.println("Insert nodes in binary search tree:");
 		bst.inOrder();
+		System.out.println();
+		if(bst.search(7)!=null)
+		{
+			System.out.println("Key found!!");
+		}
 		
 	}
 
