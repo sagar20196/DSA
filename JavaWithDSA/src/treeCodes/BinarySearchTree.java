@@ -1,7 +1,5 @@
 package treeCodes;
 
-import java.util.Arrays;
-
 public class BinarySearchTree{
 
 	protected TreeNode root;
