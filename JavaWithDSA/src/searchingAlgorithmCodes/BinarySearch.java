@@ -2,6 +2,7 @@ package searchingAlgorithmCodes;
 
 public class BinarySearch {
 	
+	//search an element in sorted array using binary search
 	public int search(int[] arr, int key)
 	{
 		//here we found the key when low,mid and high meets at the same point
