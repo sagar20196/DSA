@@ -32,6 +32,33 @@ public class DepthFirstSearch extends AdjacencyListRepresentation {
 			}
 		}
 	}
+	
+	//Depth first search using recursion
+	public void dfs()
+	{
+		boolean[] visited = new boolean[V];
+		for(int v = 0; v < V; v++)
+		{
+			if(!visited[v])
+			{
+				dfs(v, visited);
+			}
+		}
+	}
+	
+	//method called from dfs() method
+	public void dfs(int v, boolean[] visited)
+	{
+		visited[v] = true;
+		System.out.print(v+ " ");
+		for(int w : adj[v])
+		{
+			if(!visited[w])
+			{
+				dfs(w,visited);
+			}
+		}
+	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -43,6 +70,9 @@ public class DepthFirstSearch extends AdjacencyListRepresentation {
 		d.addEdge(2, 4);
 		System.out.println("Depth First Search traversal of an undirected graph using Iteration:");
 		d.dfs(0);
+		System.out.println();
+		System.out.println("Depth First Search traversal of an undirected graph using Recursion:");
+		d.dfs();
 
 	}
 
