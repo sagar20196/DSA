@@ -3,6 +3,7 @@ package graphCodes;
 import java.util.LinkedList;
 
 //Adjacency List Representation of an undirected graph using array of Linked List
+// Adjacency List ex: adj[0] --> 3 --> 1 it means 0 is connected to 1 and 3
 public class AdjacencyListRepresentation {
 	
 	protected LinkedList<Integer>[] adj; // array of Linked List
