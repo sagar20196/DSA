@@ -1,0 +1,31 @@
+						Introduction to Dynamic Programming :
+
+It is a technoque in which a complex problem is solved by--
+1. Breaking it into smaller sub-problems.
+2. Solving those sub-problems and simply storing their results.
+3. Re-use those stored results if sub-problems occurs/overlaps again. (Avoid solving sub-problem again)
+4. Finally using solutions to smaller problems build up solution to complex problem.
+
+Recursion and Dynamic Programming
+1. It is mainly an optimization over recursion.
+2. Dynamic Programming = Recursion + Memorization
+
+Example - Fibonacci Series
+It is a series of numbers in which first two numbers are 0 and 1. After that each number is the sum of the two preceding numbers.
+0,1,1,2,3,5,8,13,21.......
+			
+		fib(0) = 0
+		fib(1) = 1
+		fib(n) = fib(n-1) + fib(n-2)
+
+Code for Fibonacci Series
+
+public int fib(int n)
+{
+if(n==0) return 0;
+if(n==1) return 1;
+int left = fib(n-1);
+int right = fib(n-2);
+return left + right;
+}
+
