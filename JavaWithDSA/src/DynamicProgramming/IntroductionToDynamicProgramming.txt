@@ -29,3 +29,10 @@ int right = fib(n-2);
 return left + right;
 }
 
+
+Optimal Substructure
+A given problem has Optimal Substructure Property if optimal solution of the given problem can be obtained by using the optimal solution of its sub-problems.
+Example - fib(n) = fib(n-1) + fib(n-2)
+
+Overlapping Subproblems
+A given problem has Overlapping Subproblems property if solution of the given problem is obtained by solving same subproblems multiple times.
