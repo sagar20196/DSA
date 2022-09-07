@@ -9,9 +9,20 @@ package DynamicProgramming;
    solutions to bigger sub-problems.
  */
 
-//Fibonacci Number using Bottom Up Approach
+/*
+ * Top Down Approach --
+ * It is also called as Memorization.
+ * We break the large problem into multiple sub-problems.
+ * Each of the sub-problems are solved and solutions are remembered.
+ * If the sub-problem is solved already, reuse the answer.
+ * Else solve the sub-problem and store the result.
+ * Thus, it memorizes the solution of the sub-problem to avoid recomputing the value if sub-problem is 
+   encountered again.
+ */
+
 public class FibonacciNumber {
 
+	//Get Fibonacci Number using Bottom Up Approach
 	public int fib(int n)
 	{
 		int [] table = new int[n+1];
@@ -24,10 +35,31 @@ public class FibonacciNumber {
 		return table[n];
 	}
 	
+	//Get Fibonacci Number using Top Down Approach
+	public int fib(int[] memo, int n)
+	{
+		if(memo[n]==0)
+		{
+			if(n<2)
+			{
+				memo[n] = n; // 0 and 1
+			}
+			else
+			{
+				int left = fib(memo, n-1);
+				int right = fib(memo, n-2);
+				memo[n] = left + right; //the current number is sum of its preceding two numbers
+			}
+		}
+		return memo[n];
+	}
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		FibonacciNumber fn = new FibonacciNumber();
-		System.out.println("Fibonacci Number using Bottom Up Approach:\n"+fn.fib(7));
+		System.out.println("7th Fibonacci Number using Bottom Up Approach:\n"+fn.fib(7));
+		System.out.println("6th Fibonacci number using Top Down Approach:\n"+fn.fib(new int[6+1], 6));
+		//0,1,1,2,3,5,8,13.....
 
 	}
 
