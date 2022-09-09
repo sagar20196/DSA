@@ -1,0 +1,45 @@
+							Hashing
+
+1. Hashing is a technique used for storing, retrieving and removing information as quick as possible.
+2. Its a process of converting an arbitrary size key into fixed sized value. The conversion is done via special function called as Hash Function.
+3. The operations supported by hashing such as storing, retrieving and removing innformation have average runtime complexity of O(1).
+
+Hash Function --
+Hash function simply takes an arbitrary size key and provides fixed size value also called as index.
+
+Modular Hash Function --
+1. A Modular Hash function simply takes a key and size, returns remainder by dividing key by size.
+2. The remainder is used as an index to store the key in an array of provided size.
+Index = h(key) = key%size
+Let array size = 10 and Key Space are 5,1,10,26,99
+then how it will store in array --
+5%10 = 5 remainder then it will store at 5th index in an array.
+1%10 = 1 remainder then it will store at 1st index in an array.
+10%10 = 0 remainder then it will store at 0th index in an array.
+26%10 = 6 remainder then it will store at 6th index in an array.
+99%10 = 9 remainder then it will store at 9th index in an array.
+The problem here is if we do like 16%10 and then 6th index is already filled so what we will do. We use Hash Table for it.
+
+Hash Table --
+1. It is a generalized form of an array.
+2. It stores the data in form of key-value pair.
+3. It converts key to an index using hash function.
+4. Taking the index we store key-value in array.
+5. The primary operations supported by HashTable are -
+	put(key,value) - Adds key-value pair against unique key.
+	get(key) - Get value for the provided key.
+	remove(key) - Removes the key-value pair from HashTable.
+6. Average running time is of O(1).
+7. Java Collections Framework has HashMap class - if we want to deal with key-value pair and HashSet class if we want to deal with only keys.
+
+Collision Resolution Technique (Seperate Chaining)
+Whenever we encountered two values on same index that is called Collision. To resolve this issue we use seperate chaining and create HashNode to store the key value pair as--
+Example - (5,John) --> 5 %10 = 5 then John will stored at 5th index but if
+	(105,Mary) --> 105%10 = 5 occurs then we create HashNode and It will store like below--
+	5,John --> 105,Mary-->null
+
+Representation of HashNode in HashTable --
+A HashNode class in HashTable consists of three data members.
+1. K key - It is a unique value which helps in storing data. Here, K signifies generic type.
+2. V value - It is the data that is stored based on location computed by key. Here, V signifies generic type.
+3. HashNode next - It refers to next HashNode in chain of hash nodes.
