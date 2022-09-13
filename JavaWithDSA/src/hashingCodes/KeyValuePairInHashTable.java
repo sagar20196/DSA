@@ -67,6 +67,45 @@ public class KeyValuePairInHashTable extends HashTable {
 		}
 		return null;
 	}
+	
+	//Remove key from Hash Table
+	public String remove(Integer key)
+	{
+		if(key==null)
+		{
+			throw new IllegalArgumentException("Key is null !!");
+		}
+		
+		int bucketIndex = getBucketIndex(key);
+		HashNode head = buckets[bucketIndex];
+		HashNode previous = null;
+		while(head!=null)
+		{
+			if(head.key.equals(key))
+			{
+				break;
+			}
+			previous = head;
+			head = head.next;
+		}
+		
+		if(head==null)
+		{
+			return null;
+		}
+		size--;
+		
+		if(previous!=null)
+		{
+			previous.next = head.next;
+		}
+		else
+		{
+			buckets[bucketIndex] = head.next;
+		}
+		
+		return head.value;
+	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -80,6 +119,8 @@ public class KeyValuePairInHashTable extends HashTable {
 		String s2 = hs.get(45);
 		String s3 = hs.get(105);
 		System.out.println("Get value using Key from Hash Table:\n"+ s1+"\n"+s2+"\n"+s3);
+		System.out.println("Remove key from Hash Table:\n"+ hs.remove(21) + "\n" + hs.remove(31));
+		System.out.println("Number of Key-Value pair in Hash Table:\n"+hs.size);
 
 	}
 
