@@ -88,6 +88,12 @@ public class OverlappingInterval {
 		i.add(new Interval(2,6));
 		i.add(new Interval(1,3));
 		i.add(new Interval(8,10));
+		System.out.println("Given Intervals:");
+		for(Interval a : i)
+		{
+			System.out.print("{"+a.start +","+ a.end+"} ");
+		}
+		System.out.println();
 		i = ol.merge(i);
 		System.out.println("Overlapping intervals after merging:");
 		for(Interval a : i)
